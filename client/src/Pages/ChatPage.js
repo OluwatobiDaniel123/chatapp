@@ -46,8 +46,8 @@ function ChatPage() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
+    // localStorage.removeItem("token");
+    navigate("/chatroom");
   };
 
   return (
@@ -57,7 +57,7 @@ function ChatPage() {
           <div className="flex justify-between items-center">
             <h2 className="text-xl font-bold">Chat Room</h2>
             <button onClick={handleLogout} className="text-red-500 text-sm">
-              Logout
+              Back
             </button>
           </div>
           <p className="text-center text-gray-500 mb-3">

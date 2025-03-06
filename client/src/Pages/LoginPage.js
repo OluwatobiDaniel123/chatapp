@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 function LoginPage() {
@@ -13,8 +13,10 @@ function LoginPage() {
         password,
       });
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("userId", res.data.userId);
+
       alert("Login successful");
-      navigate("/chat");
+      navigate("/match");
     } catch (error) {
       alert("Invalid credentials");
     }
@@ -43,6 +45,13 @@ function LoginPage() {
       >
         Sign In
       </button>
+
+      <p className="text-center mt-3 flex gap-1">
+        Not yet registered?
+        <Link to="/register" className="text-pink-500">
+          Register here
+        </Link>
+      </p>
     </div>
   );
 }
