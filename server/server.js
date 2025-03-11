@@ -82,6 +82,10 @@ app.use(express.json());
 app.use(cors());
 app.use(routes);
 
+app.get("/", (req, res) => {
+  res.send("Chat App Server is Running!");
+});
+
 // MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URL)
