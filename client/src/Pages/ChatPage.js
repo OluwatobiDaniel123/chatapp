@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
 import { useNavigate } from "react-router-dom";
-const socket = io("http://localhost:5000");
+const socket = io("https://chatapp-server-three-sage.vercel.app/");
 
 function ChatPage() {
   const [user, setUser] = useState(null);
@@ -18,9 +18,12 @@ function ChatPage() {
         return;
       }
       try {
-        const res = await axios.get("http://localhost:5000/profile", {
-          headers: { Authorization: token },
-        });
+        const res = await axios.get(
+          "https://chatapp-server-three-sage.vercel.app/profile",
+          {
+            headers: { Authorization: token },
+          }
+        );
         setUser(res.data);
       } catch (error) {
         alert("Session expired, please login again");

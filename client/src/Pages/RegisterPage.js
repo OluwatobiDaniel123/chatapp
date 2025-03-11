@@ -172,9 +172,13 @@ const RegisterPage = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/register", data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        "https://chatapp-server-three-sage.vercel.app/register",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (error) {

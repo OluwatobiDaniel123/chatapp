@@ -41,7 +41,7 @@ function MatchPage() {
     const fetchProfiles = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/profiles?userId=${userId}`
+          `https://chatapp-server-three-sage.vercel.app/profiles?userId=${userId}`
         );
         setProfiles(res.data);
         console.log("Fetched profiles:", res.data);

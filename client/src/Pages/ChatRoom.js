@@ -100,7 +100,7 @@ const ChatRoom = () => {
     const fetchConversations = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/conversations?userId=${userId}`
+          `https://chatapp-server-three-sage.vercel.app/conversations?userId=${userId}`
         );
         setConversations(res.data);
       } catch (error) {

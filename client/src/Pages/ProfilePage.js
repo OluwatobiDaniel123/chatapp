@@ -11,7 +11,9 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/profiles/${id}`);
+        const res = await axios.get(
+          `https://chatapp-server-three-sage.vercel.app/profiles/${id}`
+        );
         setProfile(res.data);
       } catch (error) {
         console.error("Error fetching profile:", error);
